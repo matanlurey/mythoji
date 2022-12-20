@@ -1,0 +1,39 @@
+[package]
+name = "mythoji"
+version = "0.1.0"
+edition = "2021"
+authors = ["Matan Lurey <matan@lurey.org>"]
+description = "A minimal Rust crate that helps identify and display fantasy appropriate emojis"
+repository = "https://github.com/matanlurey/mythoji"
+license = "MIT"
+keywords = ["emoji", "fantasy", "medieval", "games", "gamedev"]
+categories = [
+  "game-development",
+]
+
+[dependencies]
+strum = {version = "0.24.1", optional = true}
+strum_macros = {version = "0.24.3", optional = true}
+
+[features]
+iter = ["strum", "strum_macros"]
+
+[[example]]
+name = "creatures"
+required-features = ["iter"]
+
+[[example]]
+name = "locations"
+required-features = ["iter"]
+
+[[example]]
+name = "items"
+required-features = ["iter"]
+
+[[example]]
+name = "people"
+required-features = ["iter"]
+
+[[example]]
+name = "symbols"
+required-features = ["iter"]
